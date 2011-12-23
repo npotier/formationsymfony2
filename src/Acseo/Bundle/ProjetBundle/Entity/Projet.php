@@ -1,0 +1,142 @@
+<?php
+
+namespace Acseo\Bundle\ProjetBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acseo\Bundle\ProjetBundle\Entity\Projet
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Acseo\Bundle\ProjetBundle\Entity\ProjetRepository")
+ */
+class Projet
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string $nom
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var datetime $dateDebut
+     *
+     * @ORM\Column(name="dateDebut", type="datetime")
+     */
+    private $dateDebut;
+
+    /**
+     * @var datetime $dateFin
+     *
+     * @ORM\Column(name="dateFin", type="datetime")
+     */
+    private $dateFin;
+
+    /**
+     * @var text $description
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set dateDebut
+     *
+     * @param datetime $dateDebut
+     */
+    public function setDateDebut($dateDebut)
+    {
+        $this->dateDebut = $dateDebut;
+    }
+
+    /**
+     * Get dateDebut
+     *
+     * @return datetime 
+     */
+    public function getDateDebut()
+    {
+        return $this->dateDebut;
+    }
+
+    /**
+     * Set dateFin
+     *
+     * @param datetime $dateFin
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->dateFin = $dateFin;
+    }
+
+    /**
+     * Get dateFin
+     *
+     * @return datetime 
+     */
+    public function getDateFin()
+    {
+        return $this->dateFin;
+    }
+
+    /**
+     * Set description
+     *
+     * @param text $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Get description
+     *
+     * @return text 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+}
