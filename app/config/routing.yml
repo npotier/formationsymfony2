@@ -16,7 +16,7 @@ AcseoProjetBundle:
 AcseoUserBundle:
     resource: "@AcseoUserBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /admin
 
 # Internal routing configuration to handle ESI
 #_internal:
