@@ -1,3 +1,23 @@
+AcseoTaskBundle:
+    resource: "@AcseoTaskBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+AcseoClientBundle:
+    resource: "@AcseoClientBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+AcseoProjetBundle:
+    resource: "@AcseoProjetBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+AcseoUserBundle:
+    resource: "@AcseoUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
