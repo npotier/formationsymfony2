@@ -3,6 +3,7 @@
 namespace Acseo\Bundle\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Acseo\Bundle\UserBundle\Entity\User
@@ -46,6 +47,8 @@ class User
      * @var string $password
      *
      * @ORM\Column(name="password", type="string", length=20)
+     * @Assert\NotBlank()
+     * @Assert\MinLength(8)
      */
     private $password;
 
