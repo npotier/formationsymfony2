@@ -200,4 +200,13 @@ class User
     {
         return $this->managers;
     }
+    
+    /**
+     * 
+     * Ajout de la fonction __toString requise pour le CRUD du Modèle User
+     */
+    public function __toString()
+    {
+    	return  $this->getUsername();
+    }
 }
