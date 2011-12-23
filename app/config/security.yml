@@ -7,10 +7,14 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            users:
-                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+#        in_memory:
+#            users:
+#                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+#                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        administrators:
+          entity: 
+            class: AcseoUserBundle:User
+            property: username
 
     firewalls:
         dev:
@@ -32,7 +36,20 @@ security:
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
-
+        admin_area_login:
+          pattern:              ^/admin/login$
+          security:             false
+        admin_area:
+          provider:             administrators
+          pattern:              ^/admin
+          form_login:
+            check_path:           /admin/auth
+            login_path:           /admin/login
+            default_target_path:      /admin
+          logout:
+            path:             /admin/logout
+            target:             /admin/login
     access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN}
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
