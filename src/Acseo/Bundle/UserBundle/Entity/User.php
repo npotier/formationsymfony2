@@ -4,14 +4,14 @@ namespace Acseo\Bundle\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Acseo\Bundle\UserBundle\Entity\User
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Acseo\Bundle\UserBundle\Entity\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var integer $id
@@ -70,6 +70,12 @@ class User
      */
      private $managers;
     
+    /**
+     * @var string $salt
+     *
+     * @ORM\Column(name="salt", type="string", length=40)
+     */
+    private $salt;
     /**
      * Get id
      *
@@ -211,5 +217,40 @@ class User
     public function __toString()
     {
     	return  $this->getUsername();
+    }
+    
+    public function eraseCredentials() {}
+
+    public function equals(UserInterface $user) 
+	{ 
+		return $user->getUsername() === $this->getUsername();
+	}
+	
+	public function getRoles()
+	{
+		if ($this->getIsAdmin())
+			return array("ROLE_ADMIN");
+		
+		return array("ROLE_USER");
+	}
+
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string 
+     */
+    public function getSalt()
+    {
+        return $this->salt;
     }
 }
