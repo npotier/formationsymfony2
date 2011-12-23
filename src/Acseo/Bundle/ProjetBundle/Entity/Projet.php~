@@ -155,48 +155,4 @@ class Projet
     {
         return $this->description;
     }
-    public function __construct()
-    {
-        $this->managers = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Add managers
-     *
-     * @param Acseo\Bundle\UserBundle\Entity\User $managers
-     */
-    public function addUser(\Acseo\Bundle\UserBundle\Entity\User $managers)
-    {
-        $this->managers[] = $managers;
-    }
-
-    /**
-     * Get managers
-     *
-     * @return Doctrine\Common\Collections\Collection 
-     */
-    public function getManagers()
-    {
-        return $this->managers;
-    }
-
-    /**
-     * Set client
-     *
-     * @param Acseo\Bundle\ClientBundle\Entity\Client $client
-     */
-    public function setClient(\Acseo\Bundle\ClientBundle\Entity\Client $client)
-    {
-        $this->client = $client;
-    }
-
-    /**
-     * Get client
-     *
-     * @return Acseo\Bundle\ClientBundle\Entity\Client 
-     */
-    public function getClient()
-    {
-        return $this->client;
-    }
 }

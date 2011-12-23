@@ -154,48 +154,4 @@ class Task
     {
         return $this->tempsPasse;
     }
-    public function __construct()
-    {
-        $this->owners = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
-     * Set projet
-     *
-     * @param Acseo\Bundle\ProjetBundle\Entity\Projet $projet
-     */
-    public function setProjet(\Acseo\Bundle\ProjetBundle\Entity\Projet $projet)
-    {
-        $this->projet = $projet;
-    }
-
-    /**
-     * Get projet
-     *
-     * @return Acseo\Bundle\ProjetBundle\Entity\Projet 
-     */
-    public function getProjet()
-    {
-        return $this->projet;
-    }
-
-    /**
-     * Add owners
-     *
-     * @param Acseo\Bundle\UserBundle\Entity\User $owners
-     */
-    public function addUser(\Acseo\Bundle\UserBundle\Entity\User $owners)
-    {
-        $this->owners[] = $owners;
-    }
-
-    /**
-     * Get owners
-     *
-     * @return Doctrine\Common\Collections\Collection 
-     */
-    public function getOwners()
-    {
-        return $this->owners;
-    }
 }
