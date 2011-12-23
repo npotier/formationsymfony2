@@ -13,7 +13,7 @@ class UserType extends AbstractType
             ->add('email')
             ->add('isActive')
             ->add('isAdmin')
-            ->add('password')
+            ->add('password', 'password')
             ->add('username')
             ->add('managers')
         ;
