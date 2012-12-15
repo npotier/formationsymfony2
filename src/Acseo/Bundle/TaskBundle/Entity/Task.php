@@ -53,8 +53,8 @@ class Task
      * @ORM\ManyToOne(targetEntity="Acseo\Bundle\ProjetBundle\Entity\Projet", cascade={"all"}, fetch="EAGER")
      */
     private $projet;
-    
-    /** 
+
+    /**
      * @var $owners
      *
      * @ORM\ManyToMany(targetEntity="Acseo\Bundle\UserBundle\Entity\User")
@@ -64,11 +64,11 @@ class Task
      *      )
      */
      private $owners;
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -88,7 +88,7 @@ class Task
     /**
      * Get nom
      *
-     * @return string 
+     * @return string
      */
     public function getNom()
     {
@@ -108,7 +108,7 @@ class Task
     /**
      * Get description
      *
-     * @return text 
+     * @return text
      */
     public function getDescription()
     {
@@ -128,7 +128,7 @@ class Task
     /**
      * Get tempsEstime
      *
-     * @return float 
+     * @return float
      */
     public function getTempsEstime()
     {
@@ -148,7 +148,7 @@ class Task
     /**
      * Get tempsPasse
      *
-     * @return float 
+     * @return float
      */
     public function getTempsPasse()
     {
@@ -158,7 +158,7 @@ class Task
     {
         $this->owners = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Set projet
      *
@@ -172,7 +172,7 @@ class Task
     /**
      * Get projet
      *
-     * @return Acseo\Bundle\ProjetBundle\Entity\Projet 
+     * @return Acseo\Bundle\ProjetBundle\Entity\Projet
      */
     public function getProjet()
     {
@@ -192,7 +192,7 @@ class Task
     /**
      * Get owners
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getOwners()
     {

@@ -3,7 +3,7 @@
 	{% if error %}
 	    <div>{{ error.message }}</div>
 	{% endif %}
-	
+
 	<form action="{{ path('admin_auth') }}" method="post">
 	    <label for="username">Username:</label>
 	    <input type="text" id="username" name="_username" value="{{ last_username }}" />

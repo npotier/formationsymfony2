@@ -59,7 +59,7 @@ class User implements UserInterface
      */
     private $username;
 
-    /** 
+    /**
      * @var $managers
      *
      * @ORM\ManyToMany(targetEntity="User")
@@ -69,7 +69,7 @@ class User implements UserInterface
      *      )
      */
      private $managers;
-    
+
     /**
      * @var string $salt
      *
@@ -79,7 +79,7 @@ class User implements UserInterface
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -99,7 +99,7 @@ class User implements UserInterface
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -119,7 +119,7 @@ class User implements UserInterface
     /**
      * Get isActive
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsActive()
     {
@@ -139,7 +139,7 @@ class User implements UserInterface
     /**
      * Get isAdmin
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getIsAdmin()
     {
@@ -159,7 +159,7 @@ class User implements UserInterface
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -179,7 +179,7 @@ class User implements UserInterface
     /**
      * Get username
      *
-     * @return string 
+     * @return string
      */
     public function getUsername()
     {
@@ -189,7 +189,7 @@ class User implements UserInterface
     {
         $this->managers = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Add managers
      *
@@ -203,36 +203,36 @@ class User implements UserInterface
     /**
      * Get managers
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getManagers()
     {
         return $this->managers;
     }
-    
+
     /**
-     * 
+     *
      * Ajout de la fonction __toString requise pour le CRUD du Modèle User
      */
     public function __toString()
     {
-    	return  $this->getUsername();
+        return  $this->getUsername();
     }
-    
+
     public function eraseCredentials() {}
 
-    public function equals(UserInterface $user) 
-	{ 
-		return $user->getUsername() === $this->getUsername();
-	}
-	
-	public function getRoles()
-	{
-		if ($this->getIsAdmin())
-			return array("ROLE_ADMIN");
-		
-		return array("ROLE_USER");
-	}
+    public function equals(UserInterface $user)
+    {
+        return $user->getUsername() === $this->getUsername();
+    }
+
+    public function getRoles()
+    {
+        if ($this->getIsAdmin())
+            return array("ROLE_ADMIN");
+
+        return array("ROLE_USER");
+    }
 
     /**
      * Set salt
@@ -247,7 +247,7 @@ class User implements UserInterface
     /**
      * Get salt
      *
-     * @return string 
+     * @return string
      */
     public function getSalt()
     {

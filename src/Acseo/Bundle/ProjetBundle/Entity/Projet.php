@@ -42,7 +42,7 @@ class Projet
      */
     private $dateFin;
 
-       /** 
+       /**
      * @var $managers
      *
      * @ORM\ManyToMany(targetEntity="Acseo\Bundle\UserBundle\Entity\User")
@@ -57,7 +57,7 @@ class Projet
      * @ORM\ManyToOne(targetEntity="Acseo\Bundle\ClientBundle\Entity\Client", cascade={"all"}, fetch="EAGER")
      */
     private $client;
-    
+
     /**
      * @var text $description
      *
@@ -65,11 +65,10 @@ class Projet
      */
     private $description;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -89,7 +88,7 @@ class Projet
     /**
      * Get nom
      *
-     * @return string 
+     * @return string
      */
     public function getNom()
     {
@@ -109,7 +108,7 @@ class Projet
     /**
      * Get dateDebut
      *
-     * @return datetime 
+     * @return datetime
      */
     public function getDateDebut()
     {
@@ -129,7 +128,7 @@ class Projet
     /**
      * Get dateFin
      *
-     * @return datetime 
+     * @return datetime
      */
     public function getDateFin()
     {
@@ -149,7 +148,7 @@ class Projet
     /**
      * Get description
      *
-     * @return text 
+     * @return text
      */
     public function getDescription()
     {
@@ -159,7 +158,7 @@ class Projet
     {
         $this->managers = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Add managers
      *
@@ -173,7 +172,7 @@ class Projet
     /**
      * Get managers
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getManagers()
     {
@@ -193,7 +192,7 @@ class Projet
     /**
      * Get client
      *
-     * @return Acseo\Bundle\ClientBundle\Entity\Client 
+     * @return Acseo\Bundle\ClientBundle\Entity\Client
      */
     public function getClient()
     {

@@ -38,18 +38,18 @@ class Client
     /**
      * @var $managers
      *
-	 * @ORM\ManyToMany(targetEntity="Acseo\Bundle\UserBundle\Entity\User")
+     * @ORM\ManyToMany(targetEntity="Acseo\Bundle\UserBundle\Entity\User")
      * @ORM\JoinTable(name="client_manager",
      *      joinColumns={@ORM\JoinColumn(name="client_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="manager_id", referencedColumnName="id")}
      *      )
      */
-	 private $managers;
-    
+     private $managers;
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,7 +69,7 @@ class Client
     /**
      * Get nom
      *
-     * @return string 
+     * @return string
      */
     public function getNom()
     {
@@ -89,7 +89,7 @@ class Client
     /**
      * Get adresse
      *
-     * @return string 
+     * @return string
      */
     public function getAdresse()
     {
@@ -99,7 +99,7 @@ class Client
     {
         $this->managers = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Add managers
      *
@@ -113,7 +113,7 @@ class Client
     /**
      * Get managers
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getManagers()
     {
